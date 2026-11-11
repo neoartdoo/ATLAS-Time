@@ -23,7 +23,7 @@ for(const m of html.matchAll(/<([a-z0-9]+)\b[^>]*\bid="([^"]+)"[^>]*>/g)){
 const $=id=>{assert.ok(nodes.has(id),`missing DOM id ${id}`);return nodes.get(id);};
 const links=[{href:'http://atlas/calendar?year=2024'},{href:'http://atlas/help'},{href:'http://atlas/health'}];
 const docListeners={};
-globalThis.document={documentElement:{lang:en?'en':'sr-Latn'},body:new Element(),hidden:false,cookie:'',getElementById:id=>nodes.get(id)??null,createElement:tag=>new Element(tag),querySelector:()=>new Element(),querySelectorAll:sel=>sel.startsWith('a[')?links:[],addEventListener:(n,f)=>docListeners[n]=f};
+globalThis.document={documentElement:{lang:en?'en':'sr-Latn'},body:new Element(),hidden:false,cookie:'',getElementById:id=>nodes.get(id)??null,createElement:tag=>new Element(tag),querySelector:selector=>String(selector).startsWith('link[rel="alternate"]')?null:new Element(),querySelectorAll:sel=>sel.startsWith('a[')?links:[],addEventListener:(n,f)=>docListeners[n]=f};
 globalThis.location=new URL(`http://atlas/${page==='index'?'':page==='analog3'?'analog-3':page}?year=2024&lang=${language}#top`);
 let redirected;location.assign=url=>{redirected=new URL(url);};
 globalThis.window={addEventListener(){},print(){}};

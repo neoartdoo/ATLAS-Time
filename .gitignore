@@ -5,3 +5,4 @@ node_modules/
 .upgrade-backups/
 *.zip
 .DS_Store
+_site/

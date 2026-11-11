@@ -51,6 +51,10 @@ if (typeof document !== 'undefined') {
     select.addEventListener('change', () => {
       const next = select.value;
       if (!['en','sr'].includes(next)) return;
+      // Static demo build (tools/build_demo.py): each language is a separate page tree
+      // announced with <link rel="alternate" hreflang>, so just go there (no cookie, no server).
+      const alternate = document.querySelector(`link[rel="alternate"][hreflang="${next}"]`);
+      if (alternate) {location.assign(alternate.href); return;}
       // This first-party preference cookie works offline and is shared by all app pages.
       document.cookie = `atlas_lang=${next}; Path=/; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;
       const url = new URL(location.href);
