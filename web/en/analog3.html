@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0c1418"><title>ATLAS Personal Time · Three-hand analog clock</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/analog.css"></head><body><main>
+<header><a class="brand" href="/"><span class="logo">100</span><span>ATLAS<span class="subbrand">PERSONAL TIME</span></span></a><div class="head-actions"><span id="analog-status" class="live" role="status">Device time</span><button id="analog-fullscreen">Full screen ↗</button></div></header>
+<div class="language-bar"><label for="language">Language</label><select id="language" aria-label="Interface language"><option value="en" lang="en">English</option><option value="sr" lang="sr-Latn">Srpski</option></select></div>
+<nav class="page-nav" aria-label="Main navigation"><a href="/">Main clock</a><a href="/calendar">Year calendar</a><a href="/history">History</a><a href="/analog">Analog clock</a><a href="/analog-3" aria-current="page">Analog · 3 hands</a><a href="/help">Help</a></nav>
+<section class="intro analog-intro"><p class="eyebrow">SAME TIME. ANOTHER VIEW.</p><h1>Three hands. The whole time.</h1><p>One hand for hours. One for minutes. One for seconds.</p></section>
+<div class="analog-layout"><section class="dial-panel"><div class="dial-top"><strong>DECIMAL DIAL</strong><span id="face-zone">—</span></div>
+<svg id="analog-face" class="clock-face" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Analog decimal clock with three hands">
+<title>ATLAS: a dial with ten divisions and three hands</title>
+<circle cx="260" cy="260" r="252" fill="#0b1418" stroke="#40534c" stroke-width="2"/>
+<circle cx="260" cy="260" r="238" fill="none" stroke="#293c34"/>
+<circle cx="260" cy="260" r="125" fill="none" stroke="#26352f" stroke-width="0.7" stroke-dasharray="2 9"/>
+<circle cx="260" cy="260" r="174" fill="none" stroke="#26352f" stroke-width="0.7" stroke-dasharray="2 9"/>
+<line x1="260.000" y1="47.000" x2="260.000" y2="28.000" stroke="#c1d3be" stroke-width="3"/>
+<line x1="274.065" y1="36.442" x2="274.567" y2="28.458" stroke="#55655e" stroke-width="1"/>
+<line x1="288.075" y1="37.766" x2="289.077" y2="29.829" stroke="#55655e" stroke-width="1"/>
+<line x1="301.973" y1="39.968" x2="303.472" y2="32.109" stroke="#55655e" stroke-width="1"/>
+<line x1="315.707" y1="43.037" x2="317.696" y2="35.289" stroke="#55655e" stroke-width="1"/>
+<line x1="327.675" y1="51.719" x2="331.692" y2="39.355" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="342.460" y1="51.730" x2="345.405" y2="44.292" stroke="#55655e" stroke-width="1"/>
+<line x1="355.375" y1="57.319" x2="358.781" y2="50.080" stroke="#55655e" stroke-width="1"/>
+<line x1="367.913" y1="63.707" x2="371.767" y2="56.697" stroke="#55655e" stroke-width="1"/>
+<line x1="380.025" y1="70.871" x2="384.312" y2="64.116" stroke="#55655e" stroke-width="1"/>
+<line x1="385.198" y1="87.679" x2="396.366" y2="72.308" stroke="#c1d3be" stroke-width="3"/>
+<line x1="402.783" y1="87.405" x2="407.882" y2="81.241" stroke="#55655e" stroke-width="1"/>
+<line x1="413.339" y1="96.711" x2="418.815" y2="90.879" stroke="#55655e" stroke-width="1"/>
+<line x1="423.289" y1="106.661" x2="429.121" y2="101.185" stroke="#55655e" stroke-width="1"/>
+<line x1="432.595" y1="117.217" x2="438.759" y2="112.118" stroke="#55655e" stroke-width="1"/>
+<line x1="437.175" y1="131.275" x2="447.692" y2="123.634" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="449.129" y1="139.975" x2="455.884" y2="135.688" stroke="#55655e" stroke-width="1"/>
+<line x1="456.293" y1="152.087" x2="463.303" y2="148.233" stroke="#55655e" stroke-width="1"/>
+<line x1="462.681" y1="164.625" x2="469.920" y2="161.219" stroke="#55655e" stroke-width="1"/>
+<line x1="468.270" y1="177.540" x2="475.708" y2="174.595" stroke="#55655e" stroke-width="1"/>
+<line x1="462.575" y1="194.179" x2="480.645" y2="188.308" stroke="#c1d3be" stroke-width="3"/>
+<line x1="476.963" y1="204.293" x2="484.711" y2="202.304" stroke="#55655e" stroke-width="1"/>
+<line x1="480.032" y1="218.027" x2="487.891" y2="216.528" stroke="#55655e" stroke-width="1"/>
+<line x1="482.234" y1="231.925" x2="490.171" y2="230.923" stroke="#55655e" stroke-width="1"/>
+<line x1="483.558" y1="245.935" x2="491.542" y2="245.433" stroke="#55655e" stroke-width="1"/>
+<line x1="479.000" y1="260.000" x2="492.000" y2="260.000" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="483.558" y1="274.065" x2="491.542" y2="274.567" stroke="#55655e" stroke-width="1"/>
+<line x1="482.234" y1="288.075" x2="490.171" y2="289.077" stroke="#55655e" stroke-width="1"/>
+<line x1="480.032" y1="301.973" x2="487.891" y2="303.472" stroke="#55655e" stroke-width="1"/>
+<line x1="476.963" y1="315.707" x2="484.711" y2="317.696" stroke="#55655e" stroke-width="1"/>
+<line x1="462.575" y1="325.821" x2="480.645" y2="331.692" stroke="#c1d3be" stroke-width="3"/>
+<line x1="468.270" y1="342.460" x2="475.708" y2="345.405" stroke="#55655e" stroke-width="1"/>
+<line x1="462.681" y1="355.375" x2="469.920" y2="358.781" stroke="#55655e" stroke-width="1"/>
+<line x1="456.293" y1="367.913" x2="463.303" y2="371.767" stroke="#55655e" stroke-width="1"/>
+<line x1="449.129" y1="380.025" x2="455.884" y2="384.312" stroke="#55655e" stroke-width="1"/>
+<line x1="437.175" y1="388.725" x2="447.692" y2="396.366" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="432.595" y1="402.783" x2="438.759" y2="407.882" stroke="#55655e" stroke-width="1"/>
+<line x1="423.289" y1="413.339" x2="429.121" y2="418.815" stroke="#55655e" stroke-width="1"/>
+<line x1="413.339" y1="423.289" x2="418.815" y2="429.121" stroke="#55655e" stroke-width="1"/>
+<line x1="402.783" y1="432.595" x2="407.882" y2="438.759" stroke="#55655e" stroke-width="1"/>
+<line x1="385.198" y1="432.321" x2="396.366" y2="447.692" stroke="#c1d3be" stroke-width="3"/>
+<line x1="380.025" y1="449.129" x2="384.312" y2="455.884" stroke="#55655e" stroke-width="1"/>
+<line x1="367.913" y1="456.293" x2="371.767" y2="463.303" stroke="#55655e" stroke-width="1"/>
+<line x1="355.375" y1="462.681" x2="358.781" y2="469.920" stroke="#55655e" stroke-width="1"/>
+<line x1="342.460" y1="468.270" x2="345.405" y2="475.708" stroke="#55655e" stroke-width="1"/>
+<line x1="327.675" y1="468.281" x2="331.692" y2="480.645" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="315.707" y1="476.963" x2="317.696" y2="484.711" stroke="#55655e" stroke-width="1"/>
+<line x1="301.973" y1="480.032" x2="303.472" y2="487.891" stroke="#55655e" stroke-width="1"/>
+<line x1="288.075" y1="482.234" x2="289.077" y2="490.171" stroke="#55655e" stroke-width="1"/>
+<line x1="274.065" y1="483.558" x2="274.567" y2="491.542" stroke="#55655e" stroke-width="1"/>
+<line x1="260.000" y1="473.000" x2="260.000" y2="492.000" stroke="#c1d3be" stroke-width="3"/>
+<line x1="245.935" y1="483.558" x2="245.433" y2="491.542" stroke="#55655e" stroke-width="1"/>
+<line x1="231.925" y1="482.234" x2="230.923" y2="490.171" stroke="#55655e" stroke-width="1"/>
+<line x1="218.027" y1="480.032" x2="216.528" y2="487.891" stroke="#55655e" stroke-width="1"/>
+<line x1="204.293" y1="476.963" x2="202.304" y2="484.711" stroke="#55655e" stroke-width="1"/>
+<line x1="192.325" y1="468.281" x2="188.308" y2="480.645" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="177.540" y1="468.270" x2="174.595" y2="475.708" stroke="#55655e" stroke-width="1"/>
+<line x1="164.625" y1="462.681" x2="161.219" y2="469.920" stroke="#55655e" stroke-width="1"/>
+<line x1="152.087" y1="456.293" x2="148.233" y2="463.303" stroke="#55655e" stroke-width="1"/>
+<line x1="139.975" y1="449.129" x2="135.688" y2="455.884" stroke="#55655e" stroke-width="1"/>
+<line x1="134.802" y1="432.321" x2="123.634" y2="447.692" stroke="#c1d3be" stroke-width="3"/>
+<line x1="117.217" y1="432.595" x2="112.118" y2="438.759" stroke="#55655e" stroke-width="1"/>
+<line x1="106.661" y1="423.289" x2="101.185" y2="429.121" stroke="#55655e" stroke-width="1"/>
+<line x1="96.711" y1="413.339" x2="90.879" y2="418.815" stroke="#55655e" stroke-width="1"/>
+<line x1="87.405" y1="402.783" x2="81.241" y2="407.882" stroke="#55655e" stroke-width="1"/>
+<line x1="82.825" y1="388.725" x2="72.308" y2="396.366" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="70.871" y1="380.025" x2="64.116" y2="384.312" stroke="#55655e" stroke-width="1"/>
+<line x1="63.707" y1="367.913" x2="56.697" y2="371.767" stroke="#55655e" stroke-width="1"/>
+<line x1="57.319" y1="355.375" x2="50.080" y2="358.781" stroke="#55655e" stroke-width="1"/>
+<line x1="51.730" y1="342.460" x2="44.292" y2="345.405" stroke="#55655e" stroke-width="1"/>
+<line x1="57.425" y1="325.821" x2="39.355" y2="331.692" stroke="#c1d3be" stroke-width="3"/>
+<line x1="43.037" y1="315.707" x2="35.289" y2="317.696" stroke="#55655e" stroke-width="1"/>
+<line x1="39.968" y1="301.973" x2="32.109" y2="303.472" stroke="#55655e" stroke-width="1"/>
+<line x1="37.766" y1="288.075" x2="29.829" y2="289.077" stroke="#55655e" stroke-width="1"/>
+<line x1="36.442" y1="274.065" x2="28.458" y2="274.567" stroke="#55655e" stroke-width="1"/>
+<line x1="41.000" y1="260.000" x2="28.000" y2="260.000" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="36.442" y1="245.935" x2="28.458" y2="245.433" stroke="#55655e" stroke-width="1"/>
+<line x1="37.766" y1="231.925" x2="29.829" y2="230.923" stroke="#55655e" stroke-width="1"/>
+<line x1="39.968" y1="218.027" x2="32.109" y2="216.528" stroke="#55655e" stroke-width="1"/>
+<line x1="43.037" y1="204.293" x2="35.289" y2="202.304" stroke="#55655e" stroke-width="1"/>
+<line x1="57.425" y1="194.179" x2="39.355" y2="188.308" stroke="#c1d3be" stroke-width="3"/>
+<line x1="51.730" y1="177.540" x2="44.292" y2="174.595" stroke="#55655e" stroke-width="1"/>
+<line x1="57.319" y1="164.625" x2="50.080" y2="161.219" stroke="#55655e" stroke-width="1"/>
+<line x1="63.707" y1="152.087" x2="56.697" y2="148.233" stroke="#55655e" stroke-width="1"/>
+<line x1="70.871" y1="139.975" x2="64.116" y2="135.688" stroke="#55655e" stroke-width="1"/>
+<line x1="82.825" y1="131.275" x2="72.308" y2="123.634" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="87.405" y1="117.217" x2="81.241" y2="112.118" stroke="#55655e" stroke-width="1"/>
+<line x1="96.711" y1="106.661" x2="90.879" y2="101.185" stroke="#55655e" stroke-width="1"/>
+<line x1="106.661" y1="96.711" x2="101.185" y2="90.879" stroke="#55655e" stroke-width="1"/>
+<line x1="117.217" y1="87.405" x2="112.118" y2="81.241" stroke="#55655e" stroke-width="1"/>
+<line x1="134.802" y1="87.679" x2="123.634" y2="72.308" stroke="#c1d3be" stroke-width="3"/>
+<line x1="139.975" y1="70.871" x2="135.688" y2="64.116" stroke="#55655e" stroke-width="1"/>
+<line x1="152.087" y1="63.707" x2="148.233" y2="56.697" stroke="#55655e" stroke-width="1"/>
+<line x1="164.625" y1="57.319" x2="161.219" y2="50.080" stroke="#55655e" stroke-width="1"/>
+<line x1="177.540" y1="51.730" x2="174.595" y2="44.292" stroke="#55655e" stroke-width="1"/>
+<line x1="192.325" y1="51.719" x2="188.308" y2="39.355" stroke="#8a9c90" stroke-width="1.5"/>
+<line x1="204.293" y1="43.037" x2="202.304" y2="35.289" stroke="#55655e" stroke-width="1"/>
+<line x1="218.027" y1="39.968" x2="216.528" y2="32.109" stroke="#55655e" stroke-width="1"/>
+<line x1="231.925" y1="37.766" x2="230.923" y2="29.829" stroke="#55655e" stroke-width="1"/>
+<line x1="245.935" y1="36.442" x2="245.433" y2="28.458" stroke="#55655e" stroke-width="1"/>
+<text x="260.000" y="73.000" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">0</text>
+<text x="374.618" y="110.242" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">1</text>
+<text x="445.456" y="207.742" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">2</text>
+<text x="445.456" y="328.258" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">3</text>
+<text x="374.618" y="425.758" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">4</text>
+<text x="260.000" y="463.000" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">5</text>
+<text x="145.382" y="425.758" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">6</text>
+<text x="74.544" y="328.258" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">7</text>
+<text x="74.544" y="207.742" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">8</text>
+<text x="145.382" y="110.242" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ecf3e9">9</text>
+<text x="260" y="335" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="5" fill="#52685b">ATLAS</text>
+<text x="260" y="355" text-anchor="middle" font-family="sans-serif" font-size="8" letter-spacing="2" fill="#52685b">PERSONAL TIME</text>
+<g id="hands" visibility="hidden">
+<g id="hand-h10" class="hand" transform="rotate(180 260 260)"><line x1="260" y1="260" x2="260" y2="86" stroke="#c9f58c" stroke-width="9" stroke-linecap="round"/>
+<path d="M 260 82 l -7 13 h 14 Z" fill="#c9f58c"/>
+</g>
+<g id="hand-m10" class="hand" transform="rotate(72 260 260)"><line x1="260" y1="260" x2="260" y2="135" stroke="#f1c779" stroke-width="4.5" stroke-linecap="round"/>
+<rect x="256" y="131" width="8" height="8" fill="#f1c779"/>
+</g>
+<g id="hand-sec" class="hand" transform="rotate(43.2 260 260)"><line x1="260" y1="276" x2="260" y2="37" stroke="#ff8777" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="260" cy="282" r="3" fill="#ff8777"/>
+</g>
+<circle cx="260" cy="260" r="10" fill="#0b1418" stroke="#8aa78d" stroke-width="2"/><circle cx="260" cy="260" r="3" fill="#e8f3de"/>
+</g></svg>
+<p class="dial-caption">Zero is at the top. Read in order: green = hours · gold = minutes · red = seconds.</p></section>
+<section class="analog-settings"><span class="eyebrow">HOW TO READ IT</span><h2>Each hand has its own unit.</h2>
+<div class="legend" aria-label="Hand legend; click to highlight a hand">
+<button data-hand="hand-h10" aria-pressed="false"><span class="sample h10"></span><span><strong>Hours · full circle = 100</strong><small>Green, broad, triangle tip. Mark 5 means 50 hours; the seventh small tick after it means 57.</small></span></button>
+<button data-hand="hand-m10" aria-pressed="false"><span class="sample m10"></span><span><strong>Minutes · full circle = 100</strong><small>Gold, shorter and thinner, square tip. Mark 2 means 20 minutes; the fourth small tick after it means 24.</small></span></button>
+<button data-hand="hand-sec" aria-pressed="false"><span class="sample sec"></span><span><strong>Seconds · full circle = 100</strong><small>Long, very thin red hand. Mark 1 = 10 seconds, 5 = 50.</small></span></button>
+</div><p class="note">Click the legend to highlight a hand; click it again to restore all hands.</p>
+<div class="analog-buttons"><button id="mode-live" aria-pressed="true">Live</button><button id="mode-demo" aria-pressed="false">Example 57:24 · pause</button></div>
+<label class="check"><input id="show-seconds" type="checkbox" checked> Show second hand</label>
+<label for="analog-zone">Time basis</label><select id="analog-zone"><option value="fixed1">UTC+01 · fixed winter offset</option><option value="fixed2">UTC+02 · fixed summer offset</option><option value="utc">UTC · universal time</option><option value="berlin">Berlin · daylight saving</option></select><p id="analog-zone-note" class="note"></p>
+<button id="analog-sync" class="sync-button">Sync with Atlas ↻</button><p id="analog-sync-note" class="sync-note"></p>
+<details class="analog-help"><summary>Show supporting digital readout</summary><div id="analog-digital" class="analog-digital">—</div><span id="analog-ordinary"></span></details>
+</section></div>
+<p class="analog-description">The dial has ten major marks and one hundred small divisions. Each major mark means ten units: 5 = 50 hours, minutes or seconds. Small divisions show individual units, so separate hands for them are unnecessary. At 57 hours, 24 minutes and 12 seconds, the green hand is just past division 57, gold just past 24, and red at 12. All three sweep smoothly, like a conventional clock. The hour hand takes 24 conventional hours per revolution, the minute hand 14 minutes and 24 seconds, and the second hand 8.64 seconds. Smaller time units determine positions between the divisions.</p>
+<footer><span>ATLAS PERSONAL TIME / ANALOG · by Marjan Panic</span><span>v1.8 · 0–9 · three hands</span></footer></main><script type="module" src="/analog3.mjs"></script></body></html>

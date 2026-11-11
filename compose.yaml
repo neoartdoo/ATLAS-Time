@@ -1,0 +1,28 @@
+# ATLAS Personal Time - Docker Compose
+#
+#   cp .env.example .env     (optional: change port / bind address)
+#   docker compose up -d --build
+#
+# Settings come from .env (see .env.example); every value has a default.
+name: atlas-time
+
+services:
+  clock:
+    build: .
+    image: atlas-time:1.8
+    restart: unless-stopped
+    ports:
+      # host bind address : host port : container port.
+      # Default is localhost only; set CLOCK_BIND=0.0.0.0 to reach it from your LAN.
+      - "${CLOCK_BIND:-127.0.0.1}:${CLOCK_PORT:-6140}:8080"
+    environment:
+      # Origins allowed to embed /?embed=1 in an iframe, space separated. Empty = none.
+      CLOCK_EMBED_ORIGINS: "${CLOCK_EMBED_ORIGINS:-}"
+    # Hardening: the app only reads its own files and needs no privileges.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

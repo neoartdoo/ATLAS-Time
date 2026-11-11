@@ -1,0 +1,10 @@
+.git
+.github
+.env
+.gitignore
+tests
+translations
+*.md
+*.zip
+.upgrade-backups
+__pycache__

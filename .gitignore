@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+node_modules/
+.upgrade-backups/
+*.zip
+.DS_Store

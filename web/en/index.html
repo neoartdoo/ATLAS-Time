@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0c1418"><title>ATLAS Personal Time · Decimal clock</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<main>
+  <header><a class="brand" href="/" aria-label="ATLAS Personal Time, home"><span class="logo">100</span><span>ATLAS<span class="subbrand">PERSONAL TIME</span></span></a><div class="head-actions"><span class="live" id="status" role="status">Device time</span><button id="fullscreen" type="button">Full screen ↗</button></div></header>
+<div class="language-bar"><label for="language">Language</label><select id="language" aria-label="Interface language"><option value="en" lang="en">English</option><option value="sr" lang="sr-Latn">Srpski</option></select></div>
+  <nav class="page-nav" aria-label="Main navigation"><a id="nav-clock" href="/">Main clock</a><a id="nav-calendar" href="/calendar">Year calendar · 13 months</a><a href="/history">History &amp; conversion</a><a href="/analog">Analog clock</a><a href="/analog-3">Analog · 3 hands</a><a href="/help">Help</a></nav>
+  <section class="intro"><p class="eyebrow">SAME DAY. YOUR DIVISION.</p><h1>Time, in hundreds.</h1><p>100 hours · 100 minutes · 100 seconds</p></section>
+  <section class="clock-panel" aria-label="Decimal clock">
+    <div class="panel-top"><span class="eyebrow">DECIMAL TIME</span><span id="zone-label">UTC+01 · fixed zone</span></div>
+    <div class="digits" role="timer" aria-live="off" aria-label="Decimal time">
+      <div><span id="dh">000</span><small>HOURS</small></div><b>.</b><div><span id="dm">000</span><small>MINUTES</small></div><b>.</b><div><span id="ds">000</span><small>SECONDS</small></div><b>.</b><div class="fraction"><span id="df">000</span><small>HUNDREDTHS</small></div>
+    </div>
+    <section class="stardate-panel" aria-label="ATLAS stardate">
+      <div class="panel-top"><span class="eyebrow">ATLAS STARDATE</span><span>UTC · same instant, same number</span></div>
+      <strong id="star-display" class="star-display">—</strong>
+      <div class="star-labels">DAYS . HOURS . MINUTES . SECONDS</div>
+      <p class="star-math">Mathematical day number: <strong id="star-number">—</strong></p>
+      <details><summary>One number for date and time</summary><p>We count from 1 January 0001 at 00:00 UTC: that is day 0. One day contains a million new seconds. For example, 739896.073.069.073 means 739896 + 73/100 + 69/10000 + 73/1000000 = 739896.736973 days.</p><p>This clock always uses UTC, regardless of your local zone selection. Its hour may therefore differ, and near midnight its day may differ too. Subtract two mathematical numbers to find the elapsed days; multiply by 86400 for conventional seconds. We follow the system Unix clock, without separately counting leap seconds. The display is truncated to six decimal places; more digits do not guarantee greater accuracy.</p></details>
+    </section>
+    <div class="day-track"><span id="day-bar"></span></div><div class="track-label"><span>START OF DAY · 000</span><span id="day-percent"></span><span>NEXT DAY · 100</span></div>
+    <div class="comparison"><div><span class="eyebrow">CONVENTIONAL CLOCK · SAME ZONE</span><strong id="ordinary">—</strong></div><div><span class="eyebrow">GREGORIAN DATE</span><strong id="ordinary-date">—</strong></div><div><span class="eyebrow">LOCAL · EUROPE/BERLIN</span><strong id="berlin">—</strong></div></div>
+  </section>
+  <section class="annual-page" aria-label="Full-year calendar">
+    <div class="annual-heading"><div><p class="eyebrow">THIRTEEN MONTHS · ONE YEAR</p><h1 id="year-title"></h1><p id="year-summary"></p></div><div class="calendar-legend"><span>● Today</span><span>＋ Extra day</span></div></div>
+    <div class="year-controls">
+      <button id="year-prev" aria-label="Previous year">←</button>
+      <form id="year-form" novalidate><label for="year-input">Year</label><input id="year-input" type="number" min="1" max="9999" step="1" inputmode="numeric" required><button type="submit">Show</button></form>
+      <button id="year-next" aria-label="Next year">→</button>
+      <button id="year-current">Today</button>
+      <div class="year-jumps"><button id="year-back1000">−1000</button><button id="year-back100">−100</button><button id="year-forward100">+100</button><button id="year-forward1000">+1000</button></div>
+    </div>
+    <p id="year-error" role="alert"></p>
+    <div class="calendar-context"><span id="calendar-today"></span><span>Years 0001–9999 · enter a year or use the arrows</span></div>
+    <p id="selected-date" role="status"></p>
+    <div id="year-months" class="year-months"></div>
+    <p class="calendar-footnote">Extra days belong to months: day 29 of the final month every year, and day 29 of the first month in leap years. Columns run from Monday to Sunday. The seven-day week continues through every month, extra day and year. Starting point: 1 January 0001 is Monday. Historical dates use the Gregorian rule extended backwards.</p>
+  </section>
+  <div class="lower-grid">
+    <section class="calendar-panel"><div class="panel-top"><span class="eyebrow">YOUR CALENDAR · 13 × 28</span><span id="year-type"></span></div><div class="custom-date" id="custom-date">—</div><p class="muted" id="date-description"></p>
+      <div class="month-nav"><button id="prev-month" aria-label="Previous month">←</button><strong id="month-title"></strong><button id="next-month" aria-label="Next month">→</button><button id="today" class="text-button">Today</button></div>
+      <div id="calendar" class="calendar" aria-label="Days of the selected month"></div><div id="extra-days" class="extra-days"></div>
+      <div class="year-progress"><span id="year-progress-label"></span><progress id="year-progress" max="366" value="0"></progress></div>
+    </section>
+    <section class="settings-panel"><span class="eyebrow">CHOOSE YOUR RHYTHM</span><h2>One day. A million seconds.</h2><p>A new second lasts 0.0864 conventional seconds. One hundredth of a new second lasts 0.864 milliseconds.</p>
+      <label for="zone">Time basis</label><select id="zone"><option value="fixed1">UTC+01 · fixed winter offset</option><option value="fixed2">UTC+02 · fixed summer offset</option><option value="utc">UTC · universal time</option><option value="berlin">Berlin · daylight saving changes</option></select><p id="zone-note" class="note"></p>
+      <button id="sync" class="sync-button">Sync with server ↻</button><p class="note" id="sync-detail">We first show your device’s system time, then the Atlas server’s time.</p>
+      <details><summary>How do we calculate date and time?</summary><p>The year starts on 1 January in your selected zone. Each month has 28 days, except the last, which always has 29. In leap years the first month also has 29 days. Extra days belong to their months and are numbered 029. They have ordinary weekdays too: Friday is followed by Saturday, even at the start of a new year.</p><p>The year number stays the same. We use the Gregorian rule: divisible by 4, except years divisible by 100, unless also divisible by 400. This is a personal calendar for everyday life, not a measurement of Earth’s exact orbital position.</p><p>The date 013.029 is the final day of the year. The date 001.029 exists only in leap years and corresponds to 29 January. The annual view supports years 0001 to 9999, with the same rule for past and future.</p><p>The clock is calculated from the server’s timestamp, not a count of application ticks. Hundredths are shown as fast as the screen can refresh: they are not a claim of atomic accuracy.</p></details>
+    </section>
+  </div>
+  <footer><span>ATLAS PERSONAL TIME · by Marjan Panic</span><span>v1.8 · 24 h = 100 × 100 × 100</span></footer>
+</main><script type="module" src="/app.mjs"></script>
+</body></html>

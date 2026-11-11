@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0c1418"><title>ATLAS Personal Time · Decimalni sat</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<main>
+  <header><a class="brand" href="/" aria-label="Decimalni sat, početna"><span class="logo">100</span><span>ATLAS<span class="subbrand">PERSONAL TIME</span></span></a><div class="head-actions"><span class="live" id="status" role="status">Vreme uređaja</span><button id="fullscreen" type="button">Ceo ekran ↗</button></div></header>
+<div class="language-bar"><label for="language">Jezik</label><select id="language" aria-label="Jezik interfejsa"><option value="en" lang="en">English</option><option value="sr" lang="sr-Latn">Srpski</option></select></div>
+  <nav class="page-nav" aria-label="Glavna navigacija"><a id="nav-clock" href="/">Veliki sat</a><a id="nav-calendar" href="/calendar">Godišnji kalendar · 13 meseci</a><a href="/history">Istorija i preračunavanje</a><a href="/analog">Analogni sat</a><a href="/analog-3">Analogni · 3 kazaljke</a><a href="/help">Help</a></nav>
+  <section class="intro"><p class="eyebrow">ISTI DAN. TVOJA PODELA.</p><h1>Vreme, u stotinama.</h1><p>100 sati · 100 minuta · 100 sekundi</p></section>
+  <section class="clock-panel" aria-label="Decimalni sat">
+    <div class="panel-top"><span class="eyebrow">DECIMALNO VREME</span><span id="zone-label">UTC+01 · stalna zona</span></div>
+    <div class="digits" role="timer" aria-live="off" aria-label="Decimalno vreme">
+      <div><span id="dh">000</span><small>SATI</small></div><b>.</b><div><span id="dm">000</span><small>MINUTI</small></div><b>.</b><div><span id="ds">000</span><small>SEKUNDE</small></div><b>.</b><div class="fraction"><span id="df">000</span><small>STOTINKE</small></div>
+    </div>
+    <section class="stardate-panel" aria-label="Atlas zvezdani datum">
+      <div class="panel-top"><span class="eyebrow">ATLAS ZVEZDANI DATUM</span><span>UTC · isti trenutak, isti broj</span></div>
+      <strong id="star-display" class="star-display">—</strong>
+      <div class="star-labels">DANI . SATI . MINUTI . SEKUNDE</div>
+      <p class="star-math">Matematički broj dana: <strong id="star-number">—</strong></p>
+      <details><summary>Jedan broj za datum i vreme</summary><p>Brojimo od 01.01.0001. u 00:00 UTC: to je dan 0. Jedan dan ima milion novih sekundi. Na primer, 739896.073.069.073 znači 739896 + 73/100 + 69/10000 + 73/1000000 = 739896,736973 dana.</p><p>Ovaj sat je uvek u UTC i ne menja se izborom lokalne zone iznad. Zato može pokazivati drugi sat, a oko ponoći i drugi dan. Razlika dva matematička broja daje protekle dane; pomnoži sa 86400 za sadašnje sekunde. Pratimo sistemski Unix sat, bez posebnog brojanja prestupnih sekundi. Prikaz je odsečen na šest decimala; više cifara ne garantuje veću tačnost.</p></details>
+    </section>
+    <div class="day-track"><span id="day-bar"></span></div><div class="track-label"><span>POČETAK DANA · 000</span><span id="day-percent"></span><span>SLEDEĆI DAN · 100</span></div>
+    <div class="comparison"><div><span class="eyebrow">SADAŠNJI SAT · ISTA ZONA</span><strong id="ordinary">—</strong></div><div><span class="eyebrow">GREGORIJANSKI DATUM</span><strong id="ordinary-date">—</strong></div><div><span class="eyebrow">LOKALNO · EUROPE/BERLIN</span><strong id="berlin">—</strong></div></div>
+  </section>
+  <section class="annual-page" aria-label="Kalendar cele godine">
+    <div class="annual-heading"><div><p class="eyebrow">TRINAEST MESECI · JEDNA GODINA</p><h1 id="year-title"></h1><p id="year-summary"></p></div><div class="calendar-legend"><span>● Danas</span><span>＋ Dodatni dan</span></div></div>
+    <div class="year-controls">
+      <button id="year-prev" aria-label="Prethodna godina">←</button>
+      <form id="year-form" novalidate><label for="year-input">Godina</label><input id="year-input" type="number" min="1" max="9999" step="1" inputmode="numeric" required><button type="submit">Prikaži</button></form>
+      <button id="year-next" aria-label="Sledeća godina">→</button>
+      <button id="year-current">Danas</button>
+      <div class="year-jumps"><button id="year-back1000">−1000</button><button id="year-back100">−100</button><button id="year-forward100">+100</button><button id="year-forward1000">+1000</button></div>
+    </div>
+    <p id="year-error" role="alert"></p>
+    <div class="calendar-context"><span id="calendar-today"></span><span>Godine 0001–9999 · unesi godinu ili koristi strelice</span></div>
+    <p id="selected-date" role="status"></p>
+    <div id="year-months" class="year-months"></div>
+    <p class="calendar-footnote">Dodatni dani pripadaju mesecima: 29. dan poslednjeg meseca svake godine, a 29. dan prvog meseca u prestupnoj godini. Kolone idu od ponedeljka do nedelje. Sedmodnevna nedelja teče bez prekida kroz sve mesece, dodatne dane i godine. Početna tačka: 01.01.0001. je ponedeljak. Istorijski datumi koriste gregorijansko pravilo produženo unazad.</p>
+  </section>
+  <div class="lower-grid">
+    <section class="calendar-panel"><div class="panel-top"><span class="eyebrow">TVOJ KALENDAR · 13 × 28</span><span id="year-type"></span></div><div class="custom-date" id="custom-date">—</div><p class="muted" id="date-description"></p>
+      <div class="month-nav"><button id="prev-month" aria-label="Prethodni mesec">←</button><strong id="month-title"></strong><button id="next-month" aria-label="Sledeći mesec">→</button><button id="today" class="text-button">Danas</button></div>
+      <div id="calendar" class="calendar" aria-label="Dani izabranog meseca"></div><div id="extra-days" class="extra-days"></div>
+      <div class="year-progress"><span id="year-progress-label"></span><progress id="year-progress" max="366" value="0"></progress></div>
+    </section>
+    <section class="settings-panel"><span class="eyebrow">RITAM KOJI BIRAŠ</span><h2>Jedan dan. Milion sekundi.</h2><p>Nova sekunda traje 0,0864 sadašnje sekunde. Stotinka nove sekunde traje 0,864 milisekunde.</p>
+      <label for="zone">Vremenska osnova</label><select id="zone"><option value="fixed1">UTC+01 · stalno zimsko vreme</option><option value="fixed2">UTC+02 · stalno letnje vreme</option><option value="utc">UTC · univerzalno vreme</option><option value="berlin">Berlin · menja se leto / zima</option></select><p id="zone-note" class="note"></p>
+      <button id="sync" class="sync-button">Uskladi sa serverom ↻</button><p class="note" id="sync-detail">Prvo prikazujemo sistemsko vreme uređaja, zatim vreme Atlasa.</p>
+      <details><summary>Kako računamo datum i vreme?</summary><p>Godina počinje 1. januara izabrane zone. Meseci imaju po 28 dana, osim poslednjeg koji uvek ima 29. U prestupnoj godini i prvi mesec ima 29 dana. Dodatni dani pripadaju mesecima i imaju broj 029. I oni imaju redovan dan u nedelji: posle petka dolazi subota, čak i kada počinje nova godina.</p><p>Broj godine ostaje sadašnji. Pratimo gregorijansko pravilo: deljiva sa 4, osim deljivih sa 100, a deljive sa 400 jesu prestupne. Ovo je lični kalendar za svakodnevni život, ne merenje tačnog položaja Zemlje u orbiti.</p><p>Datum 013.029 označava poslednji dan godine. Datum 001.029 postoji samo u prestupnoj godini i odgovara 29. januaru. Godišnji pregled podržava godine od 0001 do 9999, sa istim pravilom i za prošlost i za budućnost.</p><p>Sat se izvodi iz vremenske oznake servera, ne iz broja otkucaja aplikacije. Stotinke se prikazuju koliko ekran može brzo da osveži: nisu tvrdnja o atomskoj preciznosti.</p></details>
+    </section>
+  </div>
+  <footer><span>ATLAS PERSONAL TIME · by Marjan Panic</span><span>v1.8 · 24 h = 100 × 100 × 100</span></footer>
+</main><script type="module" src="/app.mjs"></script>
+</body></html>
