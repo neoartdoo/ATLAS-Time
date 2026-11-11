@@ -24,6 +24,8 @@ jobs:
         run: node --test tests/*.test.mjs
       - name: Server tests
         run: python3 tests/server_test.py
+      - name: Static demo build tests
+        run: python3 tests/demo_build_test.py
 
   # Builds the image on every run; publishes it to GitHub Container Registry on version tags (v1.8, ...).
   docker:

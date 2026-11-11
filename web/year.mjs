@@ -12,7 +12,7 @@ import {calendarPrefix} from './calendar-ui.mjs';
 // {refresh} so the main page can redraw it when the date changes. On other routes
 // it only marks the navigation and returns a no-op.
 export function initYearCalendar(getNow) {
-  const active = /^\/calendar\/?$/.test(location.pathname);
+  const active = /(^|\/)calendar\/?$/.test(location.pathname); // also matches /<base>/calendar/ in the static demo
   const $ = id => document.getElementById(id);
   if (!active) { $('nav-clock').setAttribute('aria-current','page'); return {refresh(){}}; }
   document.body.classList.add('year-view');

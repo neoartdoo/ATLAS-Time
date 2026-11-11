@@ -27,6 +27,8 @@ referentni spisak početnog prevoda četiri stranice, nije build korak.
 English installation and operations: [README.en.md](README.en.md).
 Complete bilingual documentation is available at `/help`.
 
+**Demo uživo:** <https://neoartdoo.github.io/ATLAS-Time/> (statička kopija: nema servera, koristi se vreme vašeg uređaja).
+
 ## Instalacija
 
 Potrebni su Docker Engine i Docker Compose v2 (ili samo Python 3 bez Dockera).

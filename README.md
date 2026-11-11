@@ -14,6 +14,8 @@ in the browser. The interface is available in English and Serbian.
 By Marjan Panic · License: [PolyForm Noncommercial 1.0.0](LICENSE): free for
 noncommercial use, commercial use needs the author's permission.
 
+**Live demo:** <https://neoartdoo.github.io/ATLAS-Time/> (static copy: no server, the time comes from your device).
+
 ## Quick start
 
 Requires Docker Engine and Docker Compose v2 (or just Python 3, see below).
@@ -111,6 +113,7 @@ Full explanations, calculations and sources are on the `/help` page.
 | `web/i18n.mjs` | English / Serbian switching |
 | `web/*.html`, `web/en/*.html` | Serbian and English pages; edit both when changing text |
 | `Dockerfile`, `compose.yaml`, `start.sh` | Container build and start |
+| `tools/build_demo.py` | Builds the static demo published to GitHub Pages |
 | `tests/` | Node and Python tests |
 
 Source files carry comments that explain what each part does.
@@ -120,6 +123,7 @@ Source files carry comments that explain what each part does.
 ```bash
 node --test tests/*.test.mjs
 python3 tests/server_test.py
+python3 tests/demo_build_test.py
 ```
 
 The tests cover time and calendar arithmetic, historical dates, hand angles,
