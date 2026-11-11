@@ -83,6 +83,18 @@ first-party `atlas_lang` cookie for one year; `?lang=en` and `?lang=sr` also wor
 - **Saved events** live only in the browser (`localStorage`), never on the server.
   Use *Export JSON* on `/history` for backups (format `atlas-history-v1`, max 500 events).
 
+### Keeping the host clock accurate
+
+The app does not set any clock and does not query time servers itself. It shows the
+time of the computer that runs the server, so keep that computer synchronised with any
+NTP server (for example `pool.ntp.org` or `time.windows.com`):
+
+- **Windows:** the Windows Time service. Check with `w32tm /query /status`, request a new
+  sync with `w32tm /resync` (administrator). The clock of the Docker Desktop virtual
+  machine can lag after sleep or hibernation; restarting Docker Desktop resynchronises it.
+- **Linux:** `timedatectl status` should show the system clock as synchronised
+  (`systemd-timesyncd` or `chrony`).
+
 Full explanations, calculations and sources are on the `/help` page.
 
 ## Project layout
@@ -120,7 +132,8 @@ first English translation, not a build step.
 Copyright (c) 2026 Marjan Panic. Licensed under the
 [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0):
 you may use, study, modify and share the software for noncommercial purposes, keeping
-the copyright notice and license. Commercial use needs separate written permission.
+the copyright notice and license (the full text is in [LICENSE](LICENSE)). Commercial use
+needs separate written permission.
 
 A license protects the code, texts and name; it does not give anyone exclusive rights
 over the underlying ideas (decimal time, a 13-month calendar). The decimal-time and

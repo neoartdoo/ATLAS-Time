@@ -76,6 +76,15 @@ prikaza, ne garancija preciznosti vremena.
 Ispod su običan sat i gregorijanski datum u istoj izabranoj zoni, plus lokalni
 sat Europe/Berlin. Na telefonu je raspored prilagođen uskom ekranu.
 
+## Sat računara (NTP)
+
+Aplikacija ne podešava sat i sama ne pita vremenske servere: prikazuje vreme računara
+na kom radi server. Sinhronizujte taj računar sa bilo kojim NTP serverom (na primer
+`pool.ntp.org` ili `time.windows.com`). Windows: `w32tm /query /status`, a
+`w32tm /resync` (kao administrator) traži novu sinhronizaciju. Linux: `timedatectl status`.
+Na Windowsu sat Docker Desktop virtuelne mašine može da zaostane posle spavanja ili
+hibernacije; restart Docker Desktopa ga ponovo usklađuje.
+
 ## Vremenska osnova i sinhronizacija
 
 Podrazumevana zona je stalna UTC+01, tako da svaki civilni dan u aplikaciji
