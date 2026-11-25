@@ -14,7 +14,7 @@ in the browser. The interface is available in English and Serbian.
 By Marjan Panic · License: [PolyForm Noncommercial 1.0.0](LICENSE): free for
 noncommercial use, commercial use needs the author's permission.
 
-**Live demo:** <https://neoartdoo.github.io/ATLAS-Time/> (static copy: no server, the time comes from your device).
+**Live demo:** [<[https://time.neoarcadestudio.com/]/>] (static copy: no server, the time comes from your device).
 
 ## Quick start
 
